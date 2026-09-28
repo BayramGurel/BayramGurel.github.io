@@ -1,5 +1,3 @@
-<img width="1280" height="652" alt="image" src="https://github.com/user-attachments/assets/cbaa11b5-f6c0-4d6f-b65a-48b6a479a961" /># Samen Meten – GitHub Pages deployment
-
 Deze repository publiceert de live versie van het Samen Meten-luchtkwaliteitsdashboard.
 
 **Live dashboard:** https://bayramgurel.github.io/
