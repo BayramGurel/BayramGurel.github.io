@@ -1,2 +1,17 @@
-Dashboard view:
-https://bayramgurel.github.io/
+# Samen Meten – GitHub Pages deployment
+
+Deze repository publiceert de live versie van het Samen Meten-luchtkwaliteitsdashboard.
+
+**Live dashboard:** https://bayramgurel.github.io/
+
+De ontwikkelbroncode staat in:
+
+https://github.com/BayramGurel/Samenmeten-Dashboard-Vue
+
+## Deployment
+
+De workflow in `.github/workflows/sync-samenmeten.yml` haalt de nieuwste broncode op, installeert de vastgelegde npm-afhankelijkheden, bouwt de Vue-app en synchroniseert de productiebuild naar deze `gh-pages` branch.
+
+Daardoor blijft deze repository gericht op hosting, terwijl de ontwikkelcode in de bronrepository wordt onderhouden.
+
+De sync kan handmatig via GitHub Actions worden gestart en draait daarnaast periodiek.
