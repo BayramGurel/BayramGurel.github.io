@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verhuisd naar luchtinbeeld.nl</title>
+  <meta name="robots" content="noindex">
+  <noscript><meta http-equiv="refresh" content="0; url=https://luchtinbeeld.nl/"></noscript>
+  <script>
+    // Any other old address: the start page of luchtinbeeld.nl, or on Vercel
+    // should that address be unreachable.
+    (function () {
+      var done = false;
+      function go(origin) {
+        if (done) return;
+        done = true;
+        location.replace(origin + '/');
+      }
+      setTimeout(function () { go('https://luchtinbeeld.vercel.app'); }, 3000);
+      fetch('https://luchtinbeeld.nl/favicon.svg', { mode: 'no-cors', cache: 'no-store' })
+        .then(function () { go('https://luchtinbeeld.nl'); })
+        .catch(function () { go('https://luchtinbeeld.vercel.app'); });
+    })();
+  </script>
+</head>
+<body>
+  <p>Deze site is verhuisd naar <a href="https://luchtinbeeld.nl/">luchtinbeeld.nl</a>.</p>
+</body>
+</html>

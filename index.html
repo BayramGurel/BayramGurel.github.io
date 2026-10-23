@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verhuisd naar luchtinbeeld.nl</title>
+  <link rel="canonical" href="https://luchtinbeeld.nl/samenmeten/">
+  <meta name="robots" content="noindex">
+  <!-- Without JavaScript: the dashboard, without the shared view. -->
+  <noscript><meta http-equiv="refresh" content="0; url=https://luchtinbeeld.nl/samenmeten/"></noscript>
+  <script>
+    // To luchtinbeeld.nl, keeping a shared view (?stof=…&dag=…&uur=…&plek=…
+    // and #kaart=…). Should that address be unreachable, the same site on
+    // Vercel, so a visitor never ends up on a dead page.
+    (function () {
+      var path = '/samenmeten/' + location.search + location.hash;
+      var done = false;
+      function go(origin) {
+        if (done) return;
+        done = true;
+        location.replace(origin + path);
+      }
+      setTimeout(function () { go('https://luchtinbeeld.vercel.app'); }, 3000);
+      fetch('https://luchtinbeeld.nl/favicon.svg', { mode: 'no-cors', cache: 'no-store' })
+        .then(function () { go('https://luchtinbeeld.nl'); })
+        .catch(function () { go('https://luchtinbeeld.vercel.app'); });
+    })();
+  </script>
+</head>
+<body>
+  <p>Het dashboard is verhuisd naar <a href="https://luchtinbeeld.nl/samenmeten/">luchtinbeeld.nl</a>.</p>
+</body>
+</html>

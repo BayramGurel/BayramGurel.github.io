@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luchtkwaliteit</title>
+  <meta name="robots" content="noindex">
+  <noscript><meta http-equiv="refresh" content="0; url=https://luchtinbeeld.nl/samenmeten/widget.html"></noscript>
+  <script>
+    // Widgets embedded on other websites keep their place and pollutant.
+    // Should luchtinbeeld.nl be unreachable, the same widget on Vercel.
+    (function () {
+      var path = '/samenmeten/widget.html' + location.search;
+      var done = false;
+      function go(origin) {
+        if (done) return;
+        done = true;
+        location.replace(origin + path);
+      }
+      setTimeout(function () { go('https://luchtinbeeld.vercel.app'); }, 3000);
+      fetch('https://luchtinbeeld.nl/favicon.svg', { mode: 'no-cors', cache: 'no-store' })
+        .then(function () { go('https://luchtinbeeld.nl'); })
+        .catch(function () { go('https://luchtinbeeld.vercel.app'); });
+    })();
+  </script>
+</head>
+<body>
+  <p>Bekijk de luchtkwaliteit op <a href="https://luchtinbeeld.nl/samenmeten/" target="_blank" rel="noopener">luchtinbeeld.nl</a>.</p>
+</body>
+</html>
